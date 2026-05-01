@@ -20,6 +20,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
+    height: 100vh;
     font-family: 'Outfit', sans-serif;
     color: var(--text-color);
     display: flex;
@@ -60,9 +61,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    justify-content: center;
+    gap: 20px;
     z-index: 10;
     padding: 20px;
+    margin: auto;
 }
 
 /* Envelope Container */
