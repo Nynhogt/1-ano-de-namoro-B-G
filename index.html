@@ -81,8 +81,10 @@
         <p class="hint-text">Clique no coração para abrir 👆</p>
     </div>
 
-    <!-- Player oculto do YouTube para música de fundo -->
-    <iframe id="bg-music" width="0" height="0" src="https://www.youtube.com/embed/nSDgHBxUbVQ?enablejsapi=1&autoplay=0" frameborder="0" allow="autoplay" style="display:none;"></iframe>
+    <!-- Player de áudio local oculto -->
+    <audio id="bg-music" loop>
+        <source src="photograph.mp3" type="audio/mpeg">
+    </audio>
     
     <script>
         function openEnvelope() {
@@ -91,12 +93,12 @@
             envelopeWrapper.classList.toggle('flap-open');
             
             // Toca ou pausa a música dependendo se o envelope está abrindo ou fechando
-            const iframe = document.getElementById('bg-music');
-            if (iframe && iframe.contentWindow) {
+            const audio = document.getElementById('bg-music');
+            if (audio) {
                 if (isOpening) {
-                    iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                    audio.play();
                 } else {
-                    iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                    audio.pause();
                 }
             }
         }
