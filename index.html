@@ -24,7 +24,9 @@
                 <div class="front pocket"></div>
                 <div class="letter">
                     <div class="letter-content">
+
                         <h1>Para o meu eterno amor</h1>
+
                         <p class="salutation">Ana Beatriz,</p>
 
                         <p>Hoje celebramos 1 ano de uma história que Deus escreveu com as próprias mãos… e, quanto mais
@@ -79,10 +81,24 @@
         <p class="hint-text">Clique no coração para abrir 👆</p>
     </div>
 
+    <!-- Player oculto do YouTube para música de fundo -->
+    <iframe id="bg-music" width="0" height="0" src="https://www.youtube.com/embed/nSDgHBxUbVQ?enablejsapi=1&autoplay=0" frameborder="0" allow="autoplay" style="display:none;"></iframe>
+    
     <script>
         function openEnvelope() {
             const envelopeWrapper = document.querySelector('.envelope-wrapper');
+            const isOpening = !envelopeWrapper.classList.contains('flap-open');
             envelopeWrapper.classList.toggle('flap-open');
+            
+            // Toca ou pausa a música dependendo se o envelope está abrindo ou fechando
+            const iframe = document.getElementById('bg-music');
+            if (iframe && iframe.contentWindow) {
+                if (isOpening) {
+                    iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                } else {
+                    iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                }
+            }
         }
     </script>
 </body>
