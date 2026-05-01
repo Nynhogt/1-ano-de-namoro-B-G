@@ -42,15 +42,21 @@
                         <p class="closing">Te amo demais, meu amorzinho!</p>
 
                         <div class="photo-gallery">
-                            <video src="1000459718%20(1).mp4" autoplay loop muted playsinline controls style="display:block"></video>
+                            <video src="1000459718%20(1).mp4" autoplay loop muted playsinline controls
+                                style="display:block"></video>
                             <img src="1000459719.jpg" alt="Nossa nova foto" onerror="this.style.display='none'">
                             <img src="1000458422.jpg" alt="Nossa foto" onerror="this.style.display='none'">
                             <img src="1000458421.jpg" alt="Nossa foto" onerror="this.style.display='none'">
-                            <img src="WhatsApp%20Image%202026-04-22%20at%2011.51.21.jpeg" alt="Nossa foto" onerror="this.style.display='none'">
-                            <img src="WhatsApp%20Image%202026-04-22%20at%2011.51.19.jpeg" alt="Nossa foto" onerror="this.style.display='none'">
-                            <img src="WhatsApp%20Image%202026-04-21%20at%2020.01.40%20(1).jpeg" alt="Nossa foto" onerror="this.style.display='none'">
-                            <img src="WhatsApp%20Image%202026-04-21%20at%2020.01.39%20(1).jpeg" alt="Nossa foto" onerror="this.style.display='none'">
-                            <img src="WhatsApp%20Image%202026-04-21%20at%2020.01.39.jpeg" alt="Nossa foto" onerror="this.style.display='none'">
+                            <img src="WhatsApp%20Image%202026-04-22%20at%2011.51.21.jpeg" alt="Nossa foto"
+                                onerror="this.style.display='none'">
+                            <img src="WhatsApp%20Image%202026-04-22%20at%2011.51.19.jpeg" alt="Nossa foto"
+                                onerror="this.style.display='none'">
+                            <img src="WhatsApp%20Image%202026-04-21%20at%2020.01.40%20(1).jpeg" alt="Nossa foto"
+                                onerror="this.style.display='none'">
+                            <img src="WhatsApp%20Image%202026-04-21%20at%2020.01.39%20(1).jpeg" alt="Nossa foto"
+                                onerror="this.style.display='none'">
+                            <img src="WhatsApp%20Image%202026-04-21%20at%2020.01.39.jpeg" alt="Nossa foto"
+                                onerror="this.style.display='none'">
                         </div>
 
                         <div class="music-player">
@@ -75,21 +81,10 @@
             Clique no coração para abrir 👆</p>
     </div>
 
-    <iframe id="bg-music" width="0" height="0" src="https://www.youtube.com/embed/nSDgHBxUbVQ?enablejsapi=1&autoplay=0" frameborder="0" allow="autoplay" style="display:none;"></iframe>
     <script>
         function openEnvelope() {
             const envelopeWrapper = document.querySelector('.envelope-wrapper');
-            const isOpening = !envelopeWrapper.classList.contains('flap-open');
             envelopeWrapper.classList.toggle('flap-open');
-            
-            const iframe = document.getElementById('bg-music');
-            if (iframe && iframe.contentWindow) {
-                if (isOpening) {
-                    iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-                } else {
-                    iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-                }
-            }
         }
     </script>
 </body>
